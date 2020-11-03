@@ -19,7 +19,7 @@ fn search(cmd: String) -> Redirect{
         "tw" => String::from("https://twitter.com"),
         "ddg" => String::from("https://duckduckgo.com"),
         "wiki" => String::from("https://wikipedia.org"),
-        _ => String::from("https://google.com")
+        _ => utils::google::construct_google_search_url(&cmd)
     };
 
     Redirect::to(redirect_url)
